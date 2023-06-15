@@ -30,10 +30,10 @@ const tableData = relevantTables.map(table => {
 	}) as TableData[];
 }).flat();
 interface Unterscheidungszeichen {
-	zeichen: string;
-	stadt_landkreis_oder_erklärung: string[];
+	Zeichen: string;
+	Stadt_Landkreis_oder_Erklärung: string[];
 	abgeleitet_von: string[]; // Array kann leer sein, siehe X: NATO, Y: Bundeswehr (willkürlich gewählt, nicht abgeleitet)
-	bundesland: string | "bundesweit";
+	Bundesland: string | "bundesweit";
 }
 const unterscheidungszeichen: Unterscheidungszeichen[] = [];
 for (let i = 0; i < tableData.length; i += 4) {
@@ -64,6 +64,32 @@ for (let i = 0; i < tableData.length; i += 4) {
 		stadt_landkreis_oder_erklärung = [td1.textContent, ...tableData.slice(i + 4, i + 3 + td0.rowspan).map(td => td.textContent)];
 		i += td0.rowspan - 1;
 	}
-	unterscheidungszeichen.push({ zeichen, stadt_landkreis_oder_erklärung, abgeleitet_von, bundesland });
+	unterscheidungszeichen.push({
+		Zeichen: zeichen,
+		Stadt_Landkreis_oder_Erklärung: stadt_landkreis_oder_erklärung,
+		abgeleitet_von,
+		Bundesland: bundesland,
+	});
 }
+unterscheidungszeichen.push(
+	{
+		Zeichen: "OVP",
+		Stadt_Landkreis_oder_Erklärung: ["Landkreis Vorpommern-Greifswald ohne die Stadt Greifswald"],
+		abgeleitet_von: ["OstVorPommern"],
+		Bundesland: "Mecklenburg-Vorpommern",
+	},
+	{
+		Zeichen: "UER",
+		Stadt_Landkreis_oder_Erklärung: ["Landkreis Vorpommern-Greifswald ohne die Stadt Greifswald"],
+		abgeleitet_von: ["UEcker-Randow"],
+		Bundesland: "Mecklenburg-Vorpommern",
+	},
+	{
+		Zeichen: "WBG",
+		Stadt_Landkreis_oder_Erklärung: ["Stadt Wolfsburg"],
+		abgeleitet_von: ["WolfsBurG"],
+		Bundesland: "Niedersachsen",
+	},
+);
+unterscheidungszeichen.sort((a, b) => a.Zeichen.localeCompare(b.Zeichen));
 await Deno.writeTextFile("unterscheidungszeichen.json", JSON.stringify(unterscheidungszeichen, null, "\t") + "\n");

@@ -4,12 +4,19 @@ Eine aufbereitete Liste der [Unterscheidungszeichen](https://de.wikipedia.org/wi
 
 Die Liste wird erstellt, indem der Wikipedia-Artikel <a href="https://de.wikipedia.org/wiki/Liste_der_Kfz-Kennzeichen_in_Deutschland"><q>Liste der Kfz-Kennzeichen in Deutschland</q></a> heruntergeladen und ausgewertet wird und die Daten anschließend aufbereitet werden.
 
-Die so entstandene JSON-Datei enthält eine Liste von Unterscheidungszeichen, die jeweils folgende Attribute haben:
+Zusätzlich wird die Liste um 3 weitere Unterscheidungszeichen ergänzt (`OVP`, `UER` und `WBG`), die aus den [Kennzeichen-Daten](https://gdz.bkg.bund.de/index.php/default/wms-kfz-kennzeichen-1-250-000-wms-kfz250.html) des Bundesamtes für Kartographie und Geodäsie stammen.
 
-- **`zeichen`** (`string`)
+<!--
+TODO: Gegen Liste von Kraftfahrt-Bundesamt prüfen
+https://www.kba.de/DE/Service/Kennzeichen/Functions/kennzeichen.html
+-->
+
+Die JSON-Datei enthält eine Liste von Unterscheidungszeichen, die jeweils die folgende Attribute haben:
+
+- **`Zeichen`** (`string`)
     - Das Unterscheidungszeichen, z. B. `"B"` für Berlin
     - Ist 1, 2 oder 3 Buchstaben lang
-- **`stadt_landkreis_oder_erklärung`** (`string[]`)
+- **`Stadt_Landkreis_oder_Erklärung`** (`string[]`)
     - Eine Liste von Städten und Kreisen, die das Zeichen verwenden, z. B. `"Kreis Herzogtum Lauenburg"` für das Zeichen `"RZ"`
     - Oder eine Erklärung für die Verwendung des Zeichens, z. B. die Erklärung `"Brandenburg, Landesregierung, Landtag und Polizei"` für das Zeichen `"BBL"`
     - Enthält 1-4 Elemente
@@ -17,7 +24,7 @@ Die so entstandene JSON-Datei enthält eine Liste von Unterscheidungszeichen, di
     - Eine Liste von Begriffen, von denen das Zeichen abgeleitet wurde, wobei die Buchstaben, die im Zeichen verwendet werden, groß geschrieben werden. Die Liste enthält i. d. R. einen Begriff, z. B. `"ParCHim"` für das Kürzel `"PCH"`. Es gibt drei Ausnahmen:
         - Die Liste ist leer für die Zeichen `"X"` (NATO-Fahrzeuge) und `"Y"` (Fahrzeuge der Bundeswehr), welche nicht abgeleitet sind, sondern willkürlich ausgewählt wurden
         - Die Liste enthält 2 Elemente für das Zeichen `"BK"`. Dieses lässt sich sowohl von `"BacKnang"` als auch von `"Börde (Kreis)"` ableiten
-- **`bundesland`** (`string`)
+- **`Bundesland`** (`string`)
     - Entweder das Bundesland:
         - `"Baden-Württemberg"`
         - `"Bayern"`
