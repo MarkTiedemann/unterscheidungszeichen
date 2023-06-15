@@ -2,6 +2,8 @@
 
 Eine aufbereitete Liste der [Unterscheidungszeichen](https://de.wikipedia.org/wiki/Kfz-Kennzeichen_(Deutschland)#Unterscheidungszeichen) deutscher Kfz-Kennzeichen als JSON-Datei: [`unterscheidungszeichen.json`](./unterscheidungszeichen.json).
 
+## Herkunft
+
 Die Liste wird erstellt, indem der Wikipedia-Artikel <a href="https://de.wikipedia.org/wiki/Liste_der_Kfz-Kennzeichen_in_Deutschland"><q>Liste der Kfz-Kennzeichen in Deutschland</q></a> heruntergeladen und ausgewertet wird und die Daten anschließend aufbereitet werden.
 
 Zusätzlich wird die Liste um 3 weitere Unterscheidungszeichen ergänzt (`OVP`, `UER` und `WBG`), die aus den [Kennzeichen-Daten](https://gdz.bkg.bund.de/index.php/default/wms-kfz-kennzeichen-1-250-000-wms-kfz250.html) des Bundesamtes für Kartographie und Geodäsie stammen.
@@ -10,6 +12,8 @@ Zusätzlich wird die Liste um 3 weitere Unterscheidungszeichen ergänzt (`OVP`, 
 TODO: Gegen Liste von Kraftfahrt-Bundesamt prüfen
 https://www.kba.de/DE/Service/Kennzeichen/Functions/kennzeichen.html
 -->
+
+## Struktur
 
 Die JSON-Datei enthält eine Liste von Unterscheidungszeichen, die jeweils die folgende Attribute haben:
 
@@ -49,3 +53,7 @@ Die JSON-Datei enthält eine Liste von Unterscheidungszeichen, die jeweils die f
         - `"THW"` für Fahrzeuge des Technischen Hilfswerks
         - `"X"` für NATO-Fahrzeuge
         - `"Y"` für Bundeswehrfahrzeuge
+
+## Lizenz
+
+Die Daten können frei verwendet werden. Sollte für die Nutzung der Daten eine Lizenz benötigt werden, kann die [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/deed.de) (<q>Kein Urheberrechtsschutz</q>) verwendet werden.
