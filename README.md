@@ -8,14 +8,14 @@ Die so entstandene JSON-Datei enthält eine Liste von Unterscheidungszeichen, di
 
 - **`zeichen`** (`string`)
     - Das Unterscheidungszeichen, z. B. `"B"` für Berlin
-    - Enthält 1-3 Buchstaben
+    - Ist 1, 2 oder 3 Buchstaben lang
 - **`stadt_landkreis_oder_erklärung`** (`string[]`)
-    - Eine nicht-leere Liste von Städten und Kreisen, die das Zeichen verwenden, z. B. `"Kreis Herzogtum Lauenburg"` für das Zeichen `"RZ"`
+    - Eine Liste von Städten und Kreisen, die das Zeichen verwenden, z. B. `"Kreis Herzogtum Lauenburg"` für das Zeichen `"RZ"`
     - Oder eine Erklärung für die Verwendung des Zeichens, z. B. die Erklärung `"Brandenburg, Landesregierung, Landtag und Polizei"` für das Zeichen `"BBL"`
     - Enthält 1-4 Elemente
 - **`abgeleitet_von`** (`string[]`)
-    - Eine Liste von Begriffen, von denen das Zeichen abgeleitet wurde, wobei die Buchstaben, die im Zeichen verwendet werden, groß geschrieben werden. Die Liste enthält i. d. R. einen Begriff, z. B. `"ParCHim"` für das Kürzel `"PCH"`. Es gibt zwei Ausnahmen:
-        - Die Liste ist leer für das Zeichen `"X"`, welches nicht abgeleitet ist, sondern willkürlich für NATO-Fahrzeuge gewählt wurde
+    - Eine Liste von Begriffen, von denen das Zeichen abgeleitet wurde, wobei die Buchstaben, die im Zeichen verwendet werden, groß geschrieben werden. Die Liste enthält i. d. R. einen Begriff, z. B. `"ParCHim"` für das Kürzel `"PCH"`. Es gibt drei Ausnahmen:
+        - Die Liste ist leer für die Zeichen `"X"` (NATO-Fahrzeuge) und `"Y"` (Fahrzeuge der Bundeswehr), welche nicht abgeleitet sind, sondern willkürlich ausgewählt wurden
         - Die Liste enthält 2 Elemente für das Zeichen `"BK"`. Dieses lässt sich sowohl von `"BacKnang"` als auch von `"Börde (Kreis)"` ableiten
 - **`bundesland`** (`string`)
     - Entweder das Bundesland:
