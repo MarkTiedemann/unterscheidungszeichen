@@ -1,7 +1,7 @@
 import { Uint8ArrayReader, Uint8ArrayWriter, ZipReader } from "https://deno.land/x/zipjs@v2.7.16/index.js";
 import { parse } from "https://deno.land/std@0.191.0/csv/mod.ts";
 
-const zipFile = await Deno.readFile("kennzeichen-von-bundesamt-fuer-kartographie.csv.zip");
+const zipFile = await Deno.readFile("kennzeichen-vom-bundesamt-fuer-kartographie.csv.zip");
 const reader = new ZipReader(new Uint8ArrayReader(new Uint8Array(zipFile)));
 const entries = await reader.getEntries();
 const entry = entries.find(e => e.filename === "kfz250.gk3.csv/kfz250/KFZ250.csv")!;
